@@ -26,40 +26,52 @@ public class Bunny : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LeftMove = Input.GetAxisRaw("Horizontal") * speed;
-        animator.SetFloat("Down", Mathf.Abs(downMove));
+        //LeftMove = Input.GetAxisRaw("Horizontal") * speed;
+        //animator.SetFloat("Down", Mathf.Abs(downMove));
         if (Input.GetKey(KeyCode.W))
         {
-            Up = true;   
+            Up = true;
+            animator.SetBool("Up", true);
             if (transform.position.y < 12)
             {
                 transform.position += .5f * Vector3.up * Time.deltaTime * speed;
             }
-        }
-        if (Input.GetKey(KeyCode.S))
+        }        
+        else if (Input.GetKey(KeyCode.S))
         {
-            Down= true;
+            animator.SetBool("Down", true);
+            Down = true;
             if (transform.position.y > -12)
             {
                 transform.position += .5f * Vector3.down * Time.deltaTime * speed;
             }
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
+            animator.SetBool("Right", true);
             Right = true;
             if (transform.position.x < 19.75f)
             {
                 transform.position += .5f * Vector3.right * Time.deltaTime * speed;
             }
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
+            animator.SetBool("Left", true);
             Left = true;
             if (transform.position.x > -19.75f)
             {
                 transform.position += .5f * Vector3.left * Time.deltaTime * speed;
             }
         }
+        else
+        {
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
+            animator.SetBool("Right", false);
+            animator.SetBool("Left", false);
+        }
+        
     }
 }
 
