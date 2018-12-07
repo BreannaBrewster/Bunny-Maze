@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class ChangeSprite : MonoBehaviour {
 
-    public Sprite CatLeft, CatRight;
+    public Sprite Down_Idle, Down_Idle2, Down_Move1, Down_Move2, Down_Move3,
+        Left_idle, Left_Move1, Left_Move2, Left_Move3, Left_Move4,
+        Right_Idle, Right_Move1, Right_Move2, Right_Move3, Right_Move4, 
+        Up_Idle, Up_Idle2, Up_Move1, Up_Move2;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,13 +15,60 @@ public class ChangeSprite : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.D))
+        
+        float time = 1;               
+        if (Input.GetKey(KeyCode.W))
         {
-            this.GetComponent<SpriteRenderer>().sprite = CatRight;
+            while (Input.GetKeyDown(KeyCode.W) == true)
+            {
+                time = 3;
+                if (time == 3)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Idle;
+                    time = time - 1;
+                }
+                if (time == 2)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Idle2;
+                    time = time - 1;
+                }
+                if (time == 1)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Move1;
+                    time = time - 1;
+                }
+                if (time == 0)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Move2;
+                    time = time - 1;
+                }
+                if (time <= 0.0f)
+                {
+                    time = 3;
+                }
+            }
+            while (Input.GetKeyDown(KeyCode.W) == false)
+            {
+                time = 1;
+                if (time == 1)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Idle;
+                    time = time - 1;
+                }
+                if (time == 0)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = Up_Idle2;
+                    time = time - 1;
+                }
+                if (time <= 0.0f)
+                {
+                    time = 1;
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.S))
         {
-            this.GetComponent<SpriteRenderer>().sprite = CatLeft;
+            this.GetComponent<SpriteRenderer>().sprite = Down_Idle;
         }
     }
 }
