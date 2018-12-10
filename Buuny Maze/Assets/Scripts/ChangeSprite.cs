@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Timers;
 
 public class ChangeSprite : MonoBehaviour {
 
@@ -12,11 +13,14 @@ public class ChangeSprite : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-        float time = 1;               
+    static float time = 1;
+
+    // Update is called once per frame
+    void Update () {
+        System.Timers.Timer timer = new System.Timers.Timer();
+        timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+        timer.Interval = 3000;
+        timer.Enabled = true;                       
         if (Input.GetKey(KeyCode.W))
         {
             while (Input.GetKeyDown(KeyCode.W) == true)
@@ -42,7 +46,7 @@ public class ChangeSprite : MonoBehaviour {
                     this.GetComponent<SpriteRenderer>().sprite = Up_Move2;
                     time = time - 1;
                 }
-                if (time <= 0.0f)
+                if (time <= 0)
                 {
                     time = 3;
                 }
@@ -60,7 +64,7 @@ public class ChangeSprite : MonoBehaviour {
                     this.GetComponent<SpriteRenderer>().sprite = Up_Idle2;
                     time = time - 1;
                 }
-                if (time <= 0.0f)
+                if (time <= 0)
                 {
                     time = 1;
                 }
@@ -70,5 +74,9 @@ public class ChangeSprite : MonoBehaviour {
         {
             this.GetComponent<SpriteRenderer>().sprite = Down_Idle;
         }
+    }
+    static void OnTimedEvent(object source, ElapsedEventArgs e)
+    {
+        time = time - 1;
     }
 }
