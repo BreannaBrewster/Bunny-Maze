@@ -37,7 +37,7 @@ public class Bunny : MonoBehaviour
                 transform.position += .5f * Vector3.up * Time.deltaTime * speed;
             }
         }        
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             animator.SetBool("Down", true);
             Down = true;
