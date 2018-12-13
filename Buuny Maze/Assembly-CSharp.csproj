@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ChangeSprite.cs" />
     <Compile Include="Assets\Scripts\Maze.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
+    <Compile Include="Assets\Scripts\TriggerEvent.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/bluea/OneDrive/Documents/Bunny Maze/Buuny Maze/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
