@@ -20,7 +20,6 @@ public class TriggerEvent : MonoBehaviour {
         if (collision.gameObject.tag == "Character")
         {
             SceneManager.LoadScene("Maze 1", LoadSceneMode.Additive);
-            SceneManager.UnloadScene("Main Screen");
         }
     }
 }
