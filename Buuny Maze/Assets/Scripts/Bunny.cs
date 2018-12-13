@@ -36,7 +36,12 @@ public class Bunny : MonoBehaviour
             {
                 transform.position += .5f * Vector3.up * Time.deltaTime * speed;
             }
-        }        
+        }
+        else
+        {
+            animator.SetBool("Up", false);
+        }
+
         if (Input.GetKey(KeyCode.S))
         {
             animator.SetBool("Down", true);
@@ -46,7 +51,12 @@ public class Bunny : MonoBehaviour
                 transform.position += .5f * Vector3.down * Time.deltaTime * speed;
             }
         }
-        else if (Input.GetKey(KeyCode.D))
+        else
+        {
+            animator.SetBool("Down", false);
+        }
+
+        if (Input.GetKey(KeyCode.D))
         {
             animator.SetBool("Right", true);
             Right = true;
@@ -55,7 +65,12 @@ public class Bunny : MonoBehaviour
                 transform.position += .5f * Vector3.right * Time.deltaTime * speed;
             }
         }
-        else if (Input.GetKey(KeyCode.A))
+        else
+        {
+            animator.SetBool("Right", false);
+        }
+
+        if (Input.GetKey(KeyCode.A))
         {
             animator.SetBool("Left", true);
             Left = true;
@@ -65,10 +80,7 @@ public class Bunny : MonoBehaviour
             }
         }
         else
-        {
-            animator.SetBool("Up", false);
-            animator.SetBool("Down", false);
-            animator.SetBool("Right", false);
+        {         
             animator.SetBool("Left", false);
         }
         
