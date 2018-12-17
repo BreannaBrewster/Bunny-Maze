@@ -17,7 +17,7 @@ public class TriggerEvent : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Character")
+        if (collision.gameObject.tag == "Start")
         {
             SceneManager.LoadScene("Maze 1", LoadSceneMode.Additive);
         }
