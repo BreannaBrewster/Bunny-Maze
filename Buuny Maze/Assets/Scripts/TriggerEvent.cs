@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TriggerEvent : MonoBehaviour {
-
+    public string sceneLoad;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,9 +17,9 @@ public class TriggerEvent : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Start")
+        if (collision.gameObject.tag == "Character")
         {
-            SceneManager.LoadScene("Maze 1", LoadSceneMode.Additive);
+            SceneManager.LoadScene(sceneLoad);
         }
     }
 }
