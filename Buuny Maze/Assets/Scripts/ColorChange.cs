@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class ColorChange : MonoBehaviour {
     // Use this for initialization
 
-    private int counter = 0;
+    int counter = 0;
     public List<Color> colors; //list of colors, can be changed in inspector
     SpriteRenderer renderReference;
     void OnCollisionEnter2D(Collision2D coll)
@@ -21,5 +20,14 @@ public class ColorChange : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
+        if(GetComponent<Renderer>().material.color != Color.white)
+        {
+            counter++;
+        }
+        if(counter >= 15)
+        {
+            GetComponent<Renderer>().material.color = Color.white;
+            counter = 0;
+        }
     }
 }
