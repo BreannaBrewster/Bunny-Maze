@@ -5704,6 +5704,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 61917196376303824, guid: 542ce1a65f8322545bf7e430712774aa,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.60612047
+      objectReference: {fileID: 0}
+    - target: {fileID: 61917196376303824, guid: 542ce1a65f8322545bf7e430712774aa,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.9972608
+      objectReference: {fileID: 0}
+    - target: {fileID: 61917196376303824, guid: 542ce1a65f8322545bf7e430712774aa,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.12099433
+      objectReference: {fileID: 0}
+    - target: {fileID: 61917196376303824, guid: 542ce1a65f8322545bf7e430712774aa,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4.694917
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 542ce1a65f8322545bf7e430712774aa, type: 2}
   m_IsPrefabParent: 0
@@ -5800,7 +5820,7 @@ GameObject:
   - component: {fileID: 1833134175}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
