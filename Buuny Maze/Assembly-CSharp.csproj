@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\ChangeSprite.cs" />
     <Compile Include="Assets\Scripts\ColorChange.cs" />
+    <Compile Include="Assets\Scripts\ColorChangeBlack.cs" />
+    <Compile Include="Assets\Scripts\lightning.cs" />
     <Compile Include="Assets\Scripts\Maze.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\TriggerEvent.cs" />
