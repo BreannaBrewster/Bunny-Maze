@@ -6,7 +6,6 @@ public class ColorChange : MonoBehaviour {
     // Use this for initialization
 
     int counter = 0;
-    public List<Color> colors; //list of colors, can be changed in inspector
     SpriteRenderer renderReference;
     void OnCollisionEnter2D(Collision2D coll)
     {
