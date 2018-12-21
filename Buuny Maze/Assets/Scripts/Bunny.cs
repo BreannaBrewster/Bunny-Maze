@@ -11,6 +11,7 @@ public class Bunny : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        AudioManager.Instance.PlayOneShot(SoundEffect.Music);
     }
     [SerializeField]
     float speed = 4f;

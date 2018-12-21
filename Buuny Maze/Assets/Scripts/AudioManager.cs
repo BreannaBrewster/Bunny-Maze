@@ -8,7 +8,6 @@ using System.Linq;
 public enum SoundEffect
 {
     Music,
-    Moosic,
 }
 public class AudioManager
 {
