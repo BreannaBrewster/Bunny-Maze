@@ -19,7 +19,7 @@ public class lightning : MonoBehaviour {
         counter++;
         if (counter >= 199)
         {
-            GetComponent<Renderer>().material.color = Color.clear;
+            GetComponent<Renderer>().material.color = Color.white;
             flash++;
 
         }
